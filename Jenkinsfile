@@ -11,8 +11,8 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("https://github.com/rajnikhattarrsinha/docker-compose-demo/tree/master/ui")
-        app1=docker.build("https://github.com/rajnikhattarrsinha/docker-compose-demo/tree/master/python/")
+        app = docker.build("rajnikhattarrsinha/docker-compose-demo/tree/master/ui")
+        app1=docker.build("rajnikhattarrsinha/docker-compose-demo/tree/master/python/")
     }
 
     stage('Test image') {
