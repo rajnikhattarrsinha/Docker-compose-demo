@@ -11,8 +11,8 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("/ui")
-        app1= docker.build("/python/")
+        app = docker.build("rajnikhattarrsinha/docker-compose-demo")
+        
     }
 
     stage('Test image') {
@@ -31,7 +31,7 @@ node {
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
             app.push("${env.BUILD_NUMBER}")
-            app1.push("${env.BUILD_NUMBER}")
+            
          }
     }
 }
